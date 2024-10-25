@@ -1,0 +1,273 @@
+--> Performing System Checks:
+   * Python version is: 2.7.1
+   * Could not import Numeric package try numpy
+   * Importing numpy package succesfull
+--> Your current working directory is: /var/www/html/3DDART/server/server-tmp/job1723630151
+--------------------------------------------------------------------------------------------------------------
+Welcome to 3D-DART version 1.2   Wed Aug 14 10:09:11 2024
+--------------------------------------------------------------------------------------------------------------
+--> Parsing command-line arguments:
+    * The following 3D-DART batch configuration file will be executed: workflow.xml
+    * Check if all plugins in pre-supplied 3D-DART workflow workflow.xml are present and of a valid type
+    * Try importing plugin: FileSelector
+      - Plugin imported
+      - Plugin XML file present
+      - Plugin Core present
+    * Try importing plugin: BuildNucleicAcids
+      - Plugin imported
+      - Plugin XML file present
+      - Plugin Core present
+    * Try importing plugin: X3DNAanalyze
+      - Plugin imported
+      - Plugin XML file present
+      - Plugin Core present
+    * Try importing plugin: ModelNucleicAcids
+      - Plugin imported
+      - Plugin XML file present
+      - Plugin Core present
+    * Try importing plugin: NABendAnalyze
+      - Plugin imported
+      - Plugin XML file present
+      - Plugin Core present
+    * Try importing plugin: PDBeditor
+      - Plugin imported
+      - Plugin XML file present
+      - Plugin Core present
+    * Try importing plugin: NArestraint
+      - Plugin imported
+      - Plugin XML file present
+      - Plugin Core present
+    * Plugin sequence is valid
+--> Metadata belonging to workflow: NAcustombuild.xml
+    * Workflow function: This workflow allows for the custom generation of nucleic acid models starting from a
+ canonical form. The user  is able to introduce a bend in the structure both on a global and  a
+ local scale. Custom values for base-pair and base-pair step parameters are accepted. Models can
+ be generated starting from a sequence or from a user defined 3DNA style base-pair/base-pair step
+ parameter file. After model generation several PDB formatting options can be applied and for
+ HADDOCK users a compatible structure file and accompanied dna-rna_restraints.def file can be
+ generated.
+    * Workflow workflowsequence:
+      1 = FileSelector
+      2 = BuildNucleicAcids
+      3 = X3DNAanalyze
+      4 = ModelNucleicAcids
+      5 = BuildNucleicAcids
+      6 = X3DNAanalyze
+      7 = NABendAnalyze
+      8 = PDBeditor
+      9 = NArestraint
+    * Workflow name: NAcustombuild.xml
+    * Workflow datetime: Thu Aug 30 15:25:33 2007
+--> Create run directory: NAcustombuild
+--> Metadata belonging to plugin: FileSelector
+    * Plugin input: None
+    * Plugin name: Upload your files
+    * Plugin output: self
+--> Variables defined for executing the plugin core:
+    * Variable useplugin: True
+    * Variable inputfrom: 1.0
+    * Variable upload: None
+--> Instantiate plugin: FileSelector
+--> Create job directory for plugin: jobnr1-FileSelector
+--> Metadata belonging to plugin: BuildNucleicAcids
+    * Plugin input: .par
+    * Plugin name: Build Nucleic Acid structure from base-pair/base-pair step parameter file
+    * Plugin output: .pdb
+--> Variables defined for executing the plugin core:
+    * Variable useplugin: True
+    * Variable negx: False
+    * Variable repeat: 1.0
+    * Variable name: dna
+    * Variable block1: False
+    * Variable sequence: GATC
+    * Variable listfiber: False
+    * Variable inputfrom: 1.0
+    * Variable basep: False
+    * Variable atomic: True
+    * Variable type: BDNA
+    * Variable block2: False
+--> Instantiate plugin: BuildNucleicAcids
+    * InputCheck ERROR: file None not found
+--> Create job directory for plugin: jobnr2-BuildNucleicAcids
+--> Starting BuildNucleicAcids
+    * Building structure from scratch with sequence: GATC
+    * Repeating this sequence 1 times
+    * Building nucleic acid as type: BDNA
+    * Structure will be given the name: dna.pdb
+--> Metadata belonging to plugin: X3DNAanalyze
+    * Plugin input: .pdb
+    * Plugin name: 3DNA nucleic acid analysis routines
+    * Plugin output: .par,.out,.dat,.aux,.cf7,.helical
+--> Variables defined for executing the plugin core:
+    * Variable useplugin: True
+    * Variable singlehelix: False
+    * Variable deformener: False
+    * Variable helregion: False
+    * Variable multistructure: False
+    * Variable inputfrom: 2.0
+    * Variable allbasepairs: False
+    * Variable master: None
+    * Variable onlyinput: False
+    * Variable curvesinput: False
+--> Instantiate plugin: X3DNAanalyze
+--> Create job directory for plugin: jobnr3-X3DNAanalyze
+--> Running dna analysis with default option set:
+    *(-t) read HETATM records
+    *(-z) more detailed base-pairing information in the output
+--> Running both the 3DNA find_pair and analysis routine for the file: /var/www/html/3DDART/server/server-tmp/job1723630151/NAcustombuild/jobnr2-BuildNucleicAcids/dna.pdb
+--> Cleaning up temporary files
+--> Calculating base-pair and base-pair step deformation energy for the file: /var/www/html/3DDART/server/server-tmp/job1723630151/NAcustombuild/jobnr3-X3DNAanalyze/dna.out
+--> Finished X3DNAanalyze Core jobs
+--> Metadata belonging to plugin: ModelNucleicAcids
+    * Plugin input: .par
+    * Plugin name: Nucleic Acids Modeling Routines
+    * Plugin output: .par
+--> Variables defined for executing the plugin core:
+    * Variable grooveend: None
+    * Variable anglestep: 1.0
+    * Variable orientstep: 1.0
+    * Variable verbose: False
+    * Variable global: True
+    * Variable startbp: None
+    * Variable helicalphase: None
+    * Variable orientrange: None
+    * Variable anglerange: None
+    * Variable minorient: None
+    * Variable glsmoothing: 0.8
+    * Variable endbp: None
+    * Variable glvariance: 0.8
+    * Variable input: None
+    * Variable gltolerance: 1.0
+    * Variable mingroove: None
+    * Variable groovestart: None
+    * Variable bpstep: ,,,,,
+    * Variable number: 10.0
+    * Variable maxgroove: None
+    * Variable bp: ,,,,,
+    * Variable maxangle: None
+    * Variable groovestep: None
+    * Variable name: None
+    * Variable lcvariance: 0.8
+    * Variable useplugin: True
+    * Variable minangle: None
+    * Variable automodel: False
+    * Variable maxorient: None
+    * Variable refbp: None
+    * Variable inputfrom: 3.0
+--> Instantiate plugin: ModelNucleicAcids
+--> Create job directory for plugin: jobnr4-ModelNucleicAcids
+--> Initializing modelling process
+    * Start modelprocess on base-pair(step) parameter file dna.par
+    * Initializing manual modeling process
+    * Checking all parameters on there validitie and set defaults
+    * No start base-pair for bending set, use first base-pair: 1
+    * No start base-pair for major groove width set, use first base-pair: 1
+    * No end base-pair for bending set, use last base-pair: 4
+    * No end base-pair for major groove width set, use last base-pair: 4
+    * No value for the reference base-pair used for bending supplied. Set to middle of sequence: 2.0
+    * No value for minimum major groove size defined. Not changing anything
+    * No value for maximum major groove size defined. Not changing anything
+    * WARNING: No value set for minangle and maxangle Set to default of: None
+    * WARNING: No value set for minorient and maxorient Set to default of: 45.0
+    * No custom value for helical phasing set (bp/turn)
+--> Start generation of parameter files
+    * Number of models to generate set to: 10
+    * Writing new parameter file with name dna1
+    * WARNING: file: dna.par is not present in the output
+--> Metadata belonging to plugin: BuildNucleicAcids
+    * Plugin input: .par
+    * Plugin name: Build Nucleic Acid structure from base-pair/base-pair step parameter file
+    * Plugin output: .pdb
+--> Variables defined for executing the plugin core:
+    * Variable useplugin: True
+    * Variable negx: False
+    * Variable repeat: 1.0
+    * Variable block2: False
+    * Variable block1: False
+    * Variable sequence: None
+    * Variable listfiber: False
+    * Variable inputfrom: 4.0
+    * Variable basep: False
+    * Variable atomic: True
+    * Variable type: BDNA
+    * Variable name: None
+--> Instantiate plugin: BuildNucleicAcids
+--> Create job directory for plugin: jobnr5-BuildNucleicAcids
+--> Starting BuildNucleicAcids
+    * Building full atomic model
+    * Rebuilding a structure from supplied par file: dna1.par
+--> Metadata belonging to plugin: X3DNAanalyze
+    * Plugin input: .pdb
+    * Plugin name: 3DNA nucleic acid analysis routines
+    * Plugin output: .par,.out,.dat,.aux,.cf7,.helical
+--> Variables defined for executing the plugin core:
+    * Variable useplugin: True
+    * Variable singlehelix: False
+    * Variable deformener: False
+    * Variable helregion: False
+    * Variable multistructure: False
+    * Variable inputfrom: 5.0
+    * Variable allbasepairs: False
+    * Variable master: None
+    * Variable onlyinput: False
+    * Variable curvesinput: False
+--> Instantiate plugin: X3DNAanalyze
+--> Create job directory for plugin: jobnr6-X3DNAanalyze
+--> Running dna analysis with default option set:
+    *(-t) read HETATM records
+    *(-z) more detailed base-pairing information in the output
+--> Running both the 3DNA find_pair and analysis routine for the file: /var/www/html/3DDART/server/server-tmp/job1723630151/NAcustombuild/jobnr5-BuildNucleicAcids/dna1.pdb
+--> Cleaning up temporary files
+--> Calculating base-pair and base-pair step deformation energy for the file: /var/www/html/3DDART/server/server-tmp/job1723630151/NAcustombuild/jobnr6-X3DNAanalyze/dna1.out
+--> Finished X3DNAanalyze Core jobs
+--> Metadata belonging to plugin: NABendAnalyze
+    * Plugin input: .par
+    * Plugin name: Nucleic Acid global bend analysis
+    * Plugin output: .bend
+--> Variables defined for executing the plugin core:
+    * Variable useplugin: True
+    * Variable verbose: False
+    * Variable zone: None
+    * Variable refbp: None
+    * Variable inputfrom: 6.0
+    * Variable multiana: False
+--> Instantiate plugin: NABendAnalyze
+--> Create job directory for plugin: jobnr7-NABendAnalyze
+--> Performing Global nucleic acid bend angle analysis
+    * Running global bend analysis on file: dna1.par
+    * No reference base-pair for bend calculation supplied. Set to middle of zone: 2
+    * Writing global bend analysis data to file: dna1.bend
+--> Metadata belonging to plugin: PDBeditor
+    * Plugin input: .pdb
+    * Plugin name: PDB formating options
+    * Plugin output: _fixed.pdb
+--> Variables defined for executing the plugin core:
+    * Variable useplugin: True
+    * Variable nohetatm: False
+    * Variable name: None
+    * Variable splitpdb: None
+    * Variable NA3to1: False
+    * Variable pdb2xml: False
+    * Variable inputfrom: 5.0
+    * Variable setchainID: None
+    * Variable xsegchain: False
+    * Variable noheader: False
+    * Variable pdb2haddock: None
+    * Variable nofooter: False
+    * Variable IUPACtoCNS: False
+    * Variable joinpdb: False
+    * Variable reatom: None
+    * Variable NA1to3: False
+    * Variable reres: None
+--> Instantiate plugin: PDBeditor
+--> Create job directory for plugin: jobnr8-PDBeditor
+--> Starting PDBeditor
+    * Printing fixed pdb file as: dna1_fixed.pdb
+--> Metadata belonging to plugin: NArestraint
+    * Plugin input: .pdb
+    * Plugin name: dna-rna_rstraints.def file generator
+    * Plugin output: dna-rna_restraints.def
+--> Use this plugin set to: False
+--------------------------------------------------------------------------------------------------------------
+3D-DART workflow sequence is executed succesfully
+--------------------------------------------------------------------------------------------------------------

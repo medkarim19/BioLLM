@@ -9,13 +9,10 @@
 - [Project Structure](#project-structure)
 - [Technology Stack](#technology-stack)
 - [Installation](#installation)
-- [Ollama Setup](#ollama-setup)
 - [Usage](#usage)
 - [APIs Overview](#apis-overview)
 - [3D Visualization](#3d-visualization)
 - [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
 
 ---
 
@@ -126,3 +123,48 @@ This will start the server at http://127.0.0.1:8000.
 2. **Access the API Documentation**: Open your web browser and navigate to http://127.0.0.1:8000/docs to access the interactive API documentation provided by FastAPI. You can test the endpoints directly from this interface.
 
 3. **Interacting with the Models**: Use the various endpoints to interact with the different models. Each API endpoint is designed to handle specific biological tasks. Refer to the API overview section below for details on available endpoints and their expected input/output formats.
+
+
+## APIs Overview
+
+
+1. POST /ask
+
+   Description: Routes the question to the appropriate processing function based on the request.
+   Request Body: JSON with a single key "question".
+   Response: JSON containing the original question and the generated response.
+
+
+2. POST /query
+
+   Description: Queries the RAG model with the provided question.
+   Request Body: String (the question to be queried).
+   Response: JSON with the question and the generated response.
+
+
+3. POST /process_pdf
+
+   Description: Uploads and processes a PDF file to extract its text content.
+   Request Body: Form data with the key pdf_file.
+   Response: JSON indicating the success of the PDF processing.
+
+
+4. POST /process_urls
+
+   Description: Processes a list of URLs, loading their content and storing it in a vector database.
+   Request Body: JSON array of URLs.
+   Response: JSON confirming successful processing and storage.
+
+
+5. POST /process_dna
+
+   Description: Processes a DNA sequence and generates models in various formats (e.g., FBX).
+   Request Body: JSON containing the DNA sequence.
+   Response: JSON indicating the success of the FBX file encoding.
+
+
+6. POST /esm
+
+   Description: Processes a protein sequence using the ESM model to predict its structure.
+   Request Body: JSON containing the protein sequence.
+   Response: JSON indicating the success of the FBX file encoding.

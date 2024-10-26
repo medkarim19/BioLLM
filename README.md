@@ -99,10 +99,12 @@ BioLLM/
      Install Ollama based on the instructions for your operating system.
      
      Verify the installation by running:
+   
           ```bash
           ollama --version
    
      Launch Ollama by running:
+   
           ```bash
           ollama start
    

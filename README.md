@@ -75,38 +75,38 @@ BioLLM/
    git clone https://github.com/medkarim19/BioLLM.git
    cd BioLLM
 
-2.Set up a virtual environment:
+2. Set up a virtual environment:
      ```bash
      python3 -m venv venv
      source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 
-3.Install dependencies:
-  ```bash
-  pip install -r requirements.txt
+3. Install dependencies:
+     ```bash
+     pip install -r requirements.txt
 
-4.CUDA Support: If you are using a GPU for accelerated deep learning tasks, ensure that the necessary CUDA dependencies are included in the requirements.txt. Here is an example of the relevant lines for PyTorch and CuPy with CUDA 11.8:
-  ```bash
-  torch==2.0.1+cu118
-  torchvision==0.15.2+cu118
-  torchaudio==2.0.2+cu118
-  cupy-cuda118
+4. CUDA Support: If you are using a GPU for accelerated deep learning tasks, ensure that the necessary CUDA dependencies are included in the requirements.txt. Here is an example of the relevant lines for PyTorch and CuPy with CUDA 11.8:
+     ```bash
+     torch==2.0.1+cu118
+     torchvision==0.15.2+cu118
+     torchaudio==2.0.2+cu118
+     cupy-cuda118
 
-5.Ollama Setup
-  Ollama is used for LLM deployment and interaction. Follow the steps below to install and launch Ollama:
-  
-  Download Ollama from the official website.
-  
-  Install Ollama based on the instructions for your operating system.
-  
-  Verify the installation by running:
-    ```bash
-    ollama --version
-
-  Launch Ollama by running:
-    ```bash
-    ollama start
-
-  Ollama must be running in the background while using the BioLLM project to ensure that the LLM interactions are properly executed.
+5. Ollama Setup
+     Ollama is used for LLM deployment and interaction. Follow the steps below to install and launch Ollama:
+     
+     Download Ollama from the official website.
+     
+     Install Ollama based on the instructions for your operating system.
+     
+     Verify the installation by running:
+       ```bash
+       ollama --version
+   
+     Launch Ollama by running:
+       ```bash
+       ollama start
+   
+     Ollama must be running in the background while using the BioLLM project to ensure that the LLM interactions are properly executed.
 
 
 ## Usage

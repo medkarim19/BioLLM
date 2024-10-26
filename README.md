@@ -112,3 +112,17 @@ BioLLM/
 
 
 ## Usage
+
+To use the BioLLM project, follow these steps:
+
+1. **Start the FastAPI Application**:
+   Launch the FastAPI application by running the following command in the project directory:
+
+   ```bash
+   uvicorn api_app:app --reload
+
+This will start the server at http://127.0.0.1:8000.
+
+2. **Access the API Documentation**: Open your web browser and navigate to http://127.0.0.1:8000/docs to access the interactive API documentation provided by FastAPI. You can test the endpoints directly from this interface.
+
+3. **Interacting with the Models**: Use the various endpoints to interact with the different models. Each API endpoint is designed to handle specific biological tasks. Refer to the API overview section below for details on available endpoints and their expected input/output formats.

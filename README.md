@@ -37,19 +37,19 @@ The architecture is modular and includes an agent responsible for routing tasks 
 - **Vector Store**: Leveraging Chroma and Nomic embeddings for document retrieval and storage.
 
 ## Project Structure
-   ```bash
-   BioLLM/
-   │
-   ├── 3d-dart/   # Prediction of the sequences                            
-   │ 
-   ├── rag/                 
-   │   ├── rag.py         # RAG model
-   │   ├── scrap_api.py     # Web Scraping logic
-   │   └── vectorestore_add.py    # Adding the data scrapped to the database
-   │
-   ├── api_app.py/      # Contains all FastAPI endpoints     
-   │   
-   └── requirements.txt      # Python dependencies
+      ```bash
+      BioLLM/
+      │
+      ├── 3d-dart/   # Prediction of the sequences                            
+      │ 
+      ├── rag/                 
+      │   ├── rag.py         # RAG model
+      │   ├── scrap_api.py     # Web Scraping logic
+      │   └── vectorestore_add.py    # Adding the data scrapped to the database
+      │
+      ├── api_app.py/      # Contains all FastAPI endpoints     
+      │   
+      └── requirements.txt      # Python dependencies
 
 
 ## Technology Stack

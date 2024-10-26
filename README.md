@@ -38,19 +38,18 @@ The architecture is modular and includes an agent responsible for routing tasks 
 
 ## Project Structure
 
-BioLLM/
-│
-├── 3d-dart/   # Prediction of the sequences                            
-│ 
-│
-├── rag/                 
-│   ├── rag.py         # RAG model
-│   ├── scrap_api.py     # Web Scraping logic
-│   └── vectorestore_add.py    # Adding the data scrapped to the database
-│
-├── api_app.py/      # Contains all FastAPI endpoints     
-│   
-└── requirements.txt      # Python dependencies
+   BioLLM/
+   │
+   ├── 3d-dart/   # Prediction of the sequences                            
+   │ 
+   ├── rag/                 
+   │   ├── rag.py         # RAG model
+   │   ├── scrap_api.py     # Web Scraping logic
+   │   └── vectorestore_add.py    # Adding the data scrapped to the database
+   │
+   ├── api_app.py/      # Contains all FastAPI endpoints     
+   │   
+   └── requirements.txt      # Python dependencies
 
 
 ## Technology Stack

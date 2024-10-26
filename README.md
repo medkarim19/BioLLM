@@ -37,7 +37,7 @@ The architecture is modular and includes an agent responsible for routing tasks 
 - **Vector Store**: Leveraging Chroma and Nomic embeddings for document retrieval and storage.
 
 ## Project Structure
-
+   ```bash
    BioLLM/
    │
    ├── 3d-dart/   # Prediction of the sequences                            

@@ -99,12 +99,12 @@ BioLLM/
      Install Ollama based on the instructions for your operating system.
      
      Verify the installation by running:
-       ```bash
-       ollama --version
+          ```bash
+          ollama --version
    
      Launch Ollama by running:
-       ```bash
-       ollama start
+          ```bash
+          ollama start
    
      Ollama must be running in the background while using the BioLLM project to ensure that the LLM interactions are properly executed.
 

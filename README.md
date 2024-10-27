@@ -12,6 +12,7 @@
 - [Usage](#usage)
 - [APIs Overview](#apis-overview)
 - [3D Visualization](#3d-visualization)
+- [Demo](#Demo)
 
 ---
 
@@ -171,6 +172,5 @@ This will start the server at http://127.0.0.1:8000.
 ## 3D Visualization
 BioLLM leverages 3D visualization tools to represent biological structures. This enables immersive viewing experiences for proteins and DNA sequences, providing deeper insights and enhanced user interaction.
 
-## Demo for the project
-
+## Demo 
 https://github.com/user-attachments/assets/12b514f2-6241-40f2-800e-6b4414bba198
